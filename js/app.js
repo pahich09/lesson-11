@@ -8,7 +8,7 @@ function CreateObj(arr, el, i) {
     this.gender = el;
     this.salary = arr[i];
 }
-const getArrayByGender = (arr1, arr2) => arr2.map((el, i) => new CreateObj(arr1, el, i));
+const getArrayByGender = (arrSal, arrGend) => arrGend.map((el, i) => new CreateObj(arrSal, el, i));
 const getSalarySum = arr => arr.reduce((sum, el) => sum + el, 0);
 const getGenderSum = (arr, gender) => arr.reduce((acc, el) => el.gender === gender ? acc += el.salary : acc, 0);
 const getAvg = (arr, gender) => (arrFilt => arrFilt.reduce((acc, el) => acc + el.salary, 0) / arrFilt.length)(arr.filter(el => !gender ? true : (el.gender === gender ? true : false)));
